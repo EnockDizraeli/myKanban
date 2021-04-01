@@ -40,8 +40,8 @@ Tap the link below for the demo
 *I also recommend you add a shortcut from the browser*
 
 # Why use myKanban
->    1. -[x] Works offline
->    2. -[x] Easy install
->    3. -[x] Data stored in your own pc
->    4. -[x] Don't have to create an account 
->    5. -[x] Absolutely free 
+*   [x] Works offline
+*   [x] Easy install
+*   [x] Data stored in your own pc
+*   [x] Don't have to create an account 
+*   [x] Absolutely free 
