@@ -18,3 +18,7 @@ We all want to be productive and feel the satisfaction that comes with it, but d
 **Mykanban** helps by making it super-simple and covenient to use kanban on your PC as it works offline and only requires you to run the **index.html** file.
 
 MyKanban works in all major browsers and the data is saved in the offline storage.
+
+<h2 align="center">
+  <img alt="MyKanban Screenshots" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/images/panel.jpg">
+</h2>
