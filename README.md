@@ -4,7 +4,7 @@
     <img width="375" height="300" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/images/logo.jpg" alt="myKanban icon"/>
   </h2>
   <h2 align="center">
-    <img alt="Free and open source kanban app" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/images/text.jpg">
+    <img alt="Free and open source kanban app" height="50" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/images/text.jpg">
   </h2>
   
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
