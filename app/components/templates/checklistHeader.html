@@ -1,0 +1,16 @@
+<div class="d-flex flex-column">
+    <div v-show="!opened">
+        <div class="d-flex align-center">
+            <v-icon>mdi-checkbox-marked-outline</v-icon>
+            <h3 @click="open()" class="cursor-pointer ml-3">{{ checklist.title }}</h3>
+            <v-spacer></v-spacer>
+            <v-btn v-if="completedItems.length > 0" @click="$emit('toggleShowingCompleted')" elevation="0" class="btn-custom-grey">
+                {{ showingCompleted ? 'Hide Completed Items' : 'Show Completed Items' }}
+            </v-btn>
+            <delete-checklist :checklist="checklist"></delete-checklist>
+        </div>
+    </div>
+    <div v-show="opened">
+        <edit-checklist @close="close()" :checklist="checklist"></edit-checklist>
+    </div>
+</div>

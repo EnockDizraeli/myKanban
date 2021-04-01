@@ -1,0 +1,24 @@
+<section class="d-flex flex-column">
+    <v-text-field
+        dense
+        filled
+        hide-details="auto"
+        placeholder="Search labels.."
+        v-model="keyword"
+    ></v-text-field>
+    <div class="mt-3">
+        <b class="grey--text text--darken-1" v-if="results.length > 0">LABELS</b>
+        <app-label 
+            v-for="label in results"
+            :label="label"
+            :card="card"
+        ></app-label>
+
+        <section v-if="results.length <= 0 && keywordIsValid" class="w-100" style="height: 200px">
+            <div class="d-flex flex-column align-center text-center justify-center fill-height">
+                <v-icon size="40">mdi-label-outline</v-icon>
+                <p class="mt-2">No labels have been found.</p>
+            </div>
+        </section>
+    </div>
+</section>

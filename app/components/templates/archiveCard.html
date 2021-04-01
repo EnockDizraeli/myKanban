@@ -1,0 +1,42 @@
+<v-menu
+    offset-y
+    v-model="opened"
+>
+    <template v-slot:activator="{ on }">
+        <v-btn class="btn-custom-grey" elevation="0" v-on="on" block>
+            <v-icon dense class="mr-3">mdi-archive</v-icon>
+            {{ card.archived ? 'Unarchive' : 'Archive'}}
+            <v-spacer></v-spacer>
+        </v-btn>
+    </template>
+    <v-card width="300">
+        <v-card-title class="pa-2">
+            <v-spacer></v-spacer>
+            <small>{{ card.archived ? 'Unarchive Card' : 'Archive Card'}}</small>
+            <v-spacer></v-spacer>
+            <v-btn @click="close()" icon>
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text class="px-3" v-show="!card.archived">
+            <p>This will remove this card from this board.To view archived cards and bring them back to the board, click "Menu > Archived Items"</p>
+            <v-btn 
+                block 
+                color="red darken-3 white--text" 
+                class="text-none" 
+                @click="archiveCard()"
+            >Archive Card</v-btn>
+        </v-card-text>
+
+        <v-card-text class="px-3" v-show="card.archived">
+            <p>Restore this card to the board.It will no longer be archived.</p>
+            <v-btn 
+                block 
+                color="green darken-3 white--text" 
+                class="text-none" 
+                @click="unarchiveCard()"
+            >Unarchive Card</v-btn>
+        </v-card-text>
+    </v-card>
+</v-menu>

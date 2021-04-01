@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myKanban</title>
+    <link rel="icon" href="favicon.png"/>
+    <link href="css/materialdesignicons.min.css" rel="stylesheet"/>
+    <link href="css/vuetify.min.css" rel="stylesheet"/>
+    <link href="css/custom.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="preloader">
+        <div class="preloader_content">
+            <div class="preloader_icon"></div>
+            <div class="preloader_spinner"></div>
+        </div>
+    </div>
+
+    <div id="app">
+        <v-app>
+            <app-header></app-header>
+            <v-main>
+                <router-view></router-view>
+            </v-main>
+        </v-app>
+    </div>
+</body>
+<script src="thirdParty/vue.min.js"></script>
+<script src="thirdParty/vuex.min.js"></script>
+<script src="thirdParty/vue-router.min.js"></script>
+<script src="thirdParty/vue-dragscroll.min.js"></script>
+<script src="thirdParty/smooth-dnd.js"></script>
+<script src="thirdParty/vue-smooth-dnd.js"></script>
+<script src="thirdParty/vuetify.js"></script>
+<script src="thirdParty/require.js" data-main="dist/bundle.min"></script>
+</html>

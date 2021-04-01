@@ -1,0 +1,29 @@
+<header class="board-header d-flex align-center pa-3 white--text">
+    <board-title :board="board"></board-title>
+
+    <v-btn @click="toggleStar" elevation="0" icon class="btn-light ml-3 rouned-sm">
+        <v-icon v-if="board.starred">mdi-star</v-icon>
+        <v-icon v-else>mdi-star-outline</v-icon>
+    </v-btn>
+    <span class="stick-divider"></span>
+
+    <v-btn elevation="0" class="btn-light">
+        <v-icon left dense>mdi-lock-outline</v-icon>
+        Private
+    </v-btn>
+    <span class="stick-divider"></span>
+
+    <v-avatar size="36" color="grey lighten-5">
+        <span class="black--text">IE</span>
+    </v-avatar>
+
+    <v-spacer></v-spacer>
+    <v-btn elevation="0" class="btn-light">
+        <v-icon left dense>mdi-share</v-icon>
+        Share
+    </v-btn>
+    <v-btn @click="toggleMenu" elevation="0" class="btn-light ml-2">
+        <v-icon left dense>mdi-dots-horizontal</v-icon>
+        Show menu
+    </v-btn>
+</header>

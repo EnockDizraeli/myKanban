@@ -1,0 +1,32 @@
+<section>
+    <div class="d-flex align-start">
+        <v-text-field 
+            placeholder="Search archive..."
+            solo
+            dense
+            :show-details="false"
+            v-model="keyword"
+            clearable
+            @input="emitEvents()"
+            @click:clear="clearKeyword().emitEvents()"
+        ></v-text-field>
+        <v-btn 
+            class="btn-custom-grey ml-2 mt-0"
+            @click="$emit('toggleShowingList')"
+            elevation="0"
+            v-show="results.length <= 0"
+        >Show {{ showingList ? 'cards' : 'lists'}}</v-btn>
+    </div>
+    <div>
+        <search-archive-results
+            @update="updateResults()" 
+            :results="results">
+        </search-archive-results>
+    </div>
+    <section v-if="noResults" class="w-100" style="height: 200px">
+        <div class="d-flex flex-column align-center text-center justify-center fill-height">
+            <v-icon size="40">mdi-magnify</v-icon>
+            <p class="mt-2">No search results found.</p>
+        </div>
+    </section>
+</section>

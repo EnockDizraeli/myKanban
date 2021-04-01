@@ -1,0 +1,53 @@
+<v-row v-if="colors.length > 0">
+    <v-col v-for="color in firstEightColors"
+        md="4"
+        class="pa-1"
+    >
+        <div @click="setValue(color.value)" 
+            class="d-flex justify-center board-color-pick rounded-sm" 
+            :style="'background-color: '+color.value"
+            v-ripple
+        >
+            <v-icon v-if="color.value === value" color="white">mdi-check</v-icon>
+        </div>
+    </v-col>
+    <!--More colors-->
+    <v-col md="4" class="pa-1">
+        <v-menu>
+            <template v-slot:activator="{ on }">
+                <v-btn v-on="on" icon class="board-color-pick">
+                    <v-icon>mdi-dots-horizontal</v-icon>
+                </v-btn>
+            </template>
+            <v-card width="300">
+                <v-card-title class="py-1">
+                    <v-spacer></v-spacer>
+                        <small class="font-weight-thin">Board Background Color</small>
+                    <v-spacer></v-spacer>
+                    <v-btn dense icon>
+                        <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                </v-card-title>
+                <v-divider></v-divider>
+                <v-card-text>
+                    <v-row>
+                        <v-col
+                            v-for="color in colors"
+                            md="4"
+                            class="pa-1"
+                        >
+                            <div @click="setValue(color.value).placeChosenColorFirst()" 
+                                class="d-flex justify-center board-color-pick board-color-pick--tall rounded-sm" 
+                                :style="'background-color: '+color.value"
+                                v-ripple
+                            >
+                                <v-icon  v-if="color.value === value" color="white">mdi-check</v-icon>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </v-card-text>
+            </v-card>
+        </v-menu>
+    </v-col>
+
+</v-row>

@@ -1,0 +1,14 @@
+define([],
+() => {
+    const SET_CHECKLISTS = 'SET_CHECKLISTS';
+    const CREATE_CHECKLIST = 'CREATE_CHECKLIST';
+    const UPDATE_CHECKLIST = 'UPDATE_CHECKLIST';
+    const DELETE_CHECKLIST = 'DELETE_CHECKLIST';
+
+    return {
+        SET_CHECKLISTS,
+        CREATE_CHECKLIST,
+        UPDATE_CHECKLIST,
+        DELETE_CHECKLIST
+    };
+});

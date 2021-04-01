@@ -1,0 +1,55 @@
+<v-menu
+    offset-y
+    v-model="opened"
+    :close-on-content-click="false"
+>
+    <template v-slot:activator="{ on }">
+        <v-btn icon class="ml-2" v-on="on">
+            <v-icon size="20">mdi-pencil</v-icon>
+        </v-btn>
+    </template>
+    <v-form @submit.prevent="editLabel()">
+        <v-card 
+            width="300"
+            elevation="0"
+        >
+            <v-card-title class="pa-2">
+                <v-spacer></v-spacer>
+                <small>Change Label</small>
+                <v-spacer></v-spacer>
+                <v-btn icon @click="close()">
+                    <v-icon size="20">mdi-close</v-icon>
+                </v-btn>
+            </v-card-title>
+            <v-divider></v-divider>
+            <v-card-text class="pa-2">
+                <v-text-field
+                    label="Name"
+                    hide-details="auto"
+                    dense
+                    filled
+                    autofocus
+                    v-model="name"
+                ></v-text-field>
+                <label-color-picker 
+                    :colors="colors" 
+                    class="mt-2 pa-2"
+                    v-model="color"
+                    :setDefault="false"
+                ></label-color-picker>
+            </v-card-text>
+            <v-card-actions class="pa-2">
+                <v-btn
+                    @click="editLabel()"
+                    color="green"
+                    class="white--text text-none"
+                    elevation="0"
+                >Save</v-btn>
+                <v-spacer></v-spacer>
+                <delete-label 
+                    :label="label"
+                ></delete-label>
+            </v-card-actions>
+        </v-card>
+    </v-form>
+</v-menu>

@@ -1,0 +1,37 @@
+<v-menu
+    v-model="opened"
+    offset-x
+    left
+>
+    <template v-slot:activator="{ on }">
+        <v-list-item link v-on="on">
+            <v-list-item-action>
+                <v-icon></v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+                <v-list-item-title>Close Board</v-list-item-title>
+            </v-list-item-content>
+        </v-list-item>
+    </template>
+    <v-card width="350">
+        <v-card-title class="pa-1">
+            <v-spacer></v-spacer>
+            <small>Close this board?</small>
+            <v-spacer></v-spacer>
+            <v-btn @click="close" icon>
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text class="px-3">
+            <p>This will close the board.You can re-open it in boards > closed boards</p>
+            <v-btn 
+                elevation="0"
+                block 
+                color="red darken-3 white--text" 
+                class="text-none" 
+                @click="closeBoard()"
+            >Close Board</v-btn>
+        </v-card-text>
+    </v-card>
+</v-menu>

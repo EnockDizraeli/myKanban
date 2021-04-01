@@ -1,0 +1,14 @@
+<div class="d-flex flex-column">
+    <div v-show="!editing" @click="enterEditMode()">
+        <div class="d-flex align-center cursor-pointer">
+            <b class="font-weight-bold blue-grey--text text--darken-3">{{ list.title }}</b>
+            <v-spacer></v-spacer>
+            <list-actions @addCard="$emit('addCard')" :list="list"></list-actions>
+        </div>
+    </div>
+    <edit-list-title 
+        v-show="editing" 
+        :list="list"
+        @blur="leaveEditMode()" 
+    ></edit-list-title>
+</div>

@@ -1,0 +1,15 @@
+<div class="d-flex flex-column" v-if="items.length > 0">
+    <div class="d-flex align-center">
+        <small>{{completion}}%</small>
+        <v-progress-linear 
+            :color="color"
+            class="ml-2 rounded-sm"
+            height="7" 
+            :value="completion"
+            background-color="blue-grey lighten-4"
+        ></v-progress-linear>
+    </div>
+    <div>
+        <checklist-item v-for="item in shownItems" :item="item"></checklist-item>
+    </div>
+</div>

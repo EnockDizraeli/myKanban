@@ -1,0 +1,45 @@
+<v-dialog
+    v-model="opened"
+    width="750"
+>
+    <v-card color="blue-grey lighten-5">
+        <v-card-text class="pa-0" v-if="card">
+            <v-progress-linear color="lime" striped height="50" value="100" v-if="card.archived">
+                This card has been archived
+            </v-progress-linear>
+            <v-container>
+                <v-row>
+                    <v-col md="9">
+                        <section class="d-flex flex-column">
+                            <card-page-title class="mb-5" :card="card"></card-page-title>
+                            <card-page-labels class="mb-5 pl-5 ml-5" :card="card"></card-page-labels>
+                            <card-description class="mt-5 mb-5" :card="card"></card-description>
+                            <checklist-group class="mt-5" :card="card"></checklist-group>
+                        </section>
+                    </v-col>
+                    <v-col md="3">
+                        <section class="d-flex flex-column">
+                            <div class="d-flex">
+                                <v-spacer></v-spacer>
+                                <v-btn @click="close" icon>
+                                    <v-icon>mdi-close</v-icon>
+                                </v-btn>
+                            </div>
+                            <card-page-controls :card="card"></card-page-controls>
+                        </section>
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-card-text>
+
+        <!--Preloader-->
+        <v-sheet height="600" v-else>
+            <v-row class="fill-height d-flex align-center justify-center">
+                <v-progress-circular
+                    indeterminate
+                    color="primary"
+                ></v-progress-circular>
+            </v-row>
+        </v-sheet>
+    </v-card>
+</v-dialog>

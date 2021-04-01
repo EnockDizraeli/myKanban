@@ -1,0 +1,19 @@
+<section v-if="results.length > 0">
+    <!--Card search results-->
+    <section v-if="cardResults.length > 0">
+        <h4 class="text-uppercase">Cards</h4>
+        <card-search-result v-for="card in cardResults" :card="card"></card-search-result>
+    </section>
+    <!--end Card search results-->
+
+    <!--Board search results-->
+    <v-container class="pa-0" v-if="boardResults.length > 0">
+        <h4 class="text-uppercase">Boards</h4>
+        <v-row class="px-2">
+            <v-col class="pa-1" md="6" v-for="board in boardResults">
+                <board-tape :board="board"></board-tape>
+            </v-col> 
+        </v-row>
+    </v-container>
+    <!--end Board search results-->
+</section>

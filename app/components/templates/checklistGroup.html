@@ -1,0 +1,6 @@
+<section class="d-flex flex-column" v-if="checklists.length > 0">
+    <checklist 
+        v-for="checklists in checklists" 
+        :checklist="checklists"
+    ></checklist>
+</section>

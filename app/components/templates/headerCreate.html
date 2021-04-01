@@ -1,0 +1,38 @@
+<v-menu
+    v-model="opened"
+    offset-y
+    :close-on-content-click="false"
+>
+    <template v-slot:activator="{ on }">
+        <v-btn 
+            small 
+            icon 
+            class="btn-light pa-5"
+            v-on="on"
+        >
+            <v-icon>mdi-plus</v-icon>
+        </v-btn>
+    </template>
+
+    <v-card width="350">
+        <v-card-title class="pa-3">
+            <v-spacer></v-spacer>
+            <small>Create</small>
+            <v-spacer></v-spacer>
+            <v-btn small icon @click="close">
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text>
+
+            <create-board ref="createBoard">
+                <div @click="$refs.createBoard.open()" class="d-flex flex-column cursor-pointer" v-ripple>
+                    <h4><v-icon dense left>mdi-credit-card-multiple</v-icon>Create Board</h4>
+                    <b class="mt-1 font-weight-thin">A board is made up of cards ordered on lists.Use it to manage projects or organize just about anything.</b>
+                </div>
+            </create-board>
+
+        </v-card-text>
+    </v-card>
+</v-menu>

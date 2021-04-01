@@ -1,0 +1,31 @@
+<v-menu
+    v-model="opened"
+    offset-x
+    right
+>
+    <template v-slot:activator="{ on }">
+        <v-list-item link v-on="on">
+            Archive All Cards in this list...
+        </v-list-item>
+    </template>
+    <v-card width="300">
+        <v-card-title class="pa-1">
+            <v-spacer></v-spacer>
+            <small>Archive all cards in this list?</small>
+            <v-spacer></v-spacer>
+            <v-btn @click="close" icon>
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text class="px-3">
+            <p>This will remove all the cards in this list from this board.To view archived cards and bring them back to the board, click "Menu > Archived Items"</p>
+            <v-btn 
+                block 
+                color="red darken-3 white--text" 
+                class="text-none" 
+                @click="archiveCards()"
+            >Archive All</v-btn>
+        </v-card-text>
+    </v-card>
+</v-menu>

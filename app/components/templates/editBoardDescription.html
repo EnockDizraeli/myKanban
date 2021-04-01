@@ -1,0 +1,25 @@
+<v-form
+    class="text-body-2"
+    @submit.prevent="saveDescription()"
+>
+    <v-textarea
+        placeholder="Add a description to this board"
+        autofocus
+        class="text-body-2"
+        rows="2"
+        solo
+        hide-details="auto"
+        v-model="description"
+    ></v-textarea>
+    <div class="d-flex align-center py-2">
+        <v-btn
+            @click="saveDescription()"
+            color="green"
+            class="white--text"
+        >Save</v-btn>
+        <v-btn icon @click="$emit('close')">
+            <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
+    </div>
+</v-form>

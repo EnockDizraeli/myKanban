@@ -1,0 +1,15 @@
+<router-link
+    :to="{ name: 'board',params: { id: board.id}}"
+    class="board-tape mt-1 rounded-sm cursor-pointer" 
+    :style="'background-color:'+board.background" 
+    v-ripple
+    tag="div"
+    >
+    <span class="btn-light pa-2" style="width: 85%">
+        <b style="max-width: 100%" class="ml-2 d-inline-block text-truncate">{{ board.title }}</b>
+    </span>
+    <v-btn @click.prevent="toggleStarred" small icon color="white" class="ml-1 board-tape_star">
+        <v-icon v-if="board.starred">mdi-star</v-icon>
+        <v-icon v-else>mdi-star-outline</v-icon>
+    </v-btn>
+</router-link>

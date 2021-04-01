@@ -1,0 +1,47 @@
+<v-menu
+    v-model="opened"
+    offset-y
+    :close-on-content-click="false"
+>
+    <template v-slot:activator="{ on }">
+        <slot>
+            <v-btn class="btn-dark mt-1" v-on="on">
+                <v-icon left dense>mdi-clock</v-icon>
+                Change Due Date
+            </v-btn>
+        </slot>
+    </template>
+    <v-card width="300"> 
+        <v-card-title class="pa-2">
+            <v-spacer></v-spacer>
+            <small>Change Due Date</small>
+            <v-spacer></v-spacer>
+            <v-btn @click="close()" icon>
+                <v-icon size="20">mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text class="d-flex flex-column pa-2">
+            <v-date-picker
+                color="green"
+                v-model="date"
+            ></v-date-picker>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions class="pa-2">
+            <v-btn 
+                @click="scheduleCard()"
+                color="green white--text"
+                class="text-none"
+                elevation="0"
+            >Save</v-btn>
+            <v-spacer></v-spacer>
+            <v-btn 
+                @click="removeCardSchedule()"
+                color="red darken-4 white--text"
+                class="text-none"
+                elevation="0"
+            >Remove</v-btn>
+        </v-card-actions>
+    </v-card>
+</v-menu>

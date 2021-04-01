@@ -1,0 +1,32 @@
+<v-menu
+    offset-y
+    v-model="opened"
+>
+    <template v-slot:activator="{ on }">
+        <v-btn
+            v-on="on"
+            color="red darken-4"
+            class="white--text text-none"
+            elevation="0"
+        >Delete</v-btn>
+    </template>
+    <v-card width="300">
+        <v-card-title class="pa-2">
+            <v-spacer></v-spacer>
+            <small>Delete Label?</small>
+            <v-spacer></v-spacer>
+            <v-btn icon @click="close()">
+                <v-icon size="20">mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text class="pa-2">
+            Are you sure you want to delete this Label? Your action will be permanent and irreversible.
+        </v-card-text>
+        <v-card-actions class="pa-2">
+            <v-btn @click="deleteLabel()" color="red darken-4 white--text" class="text-none" elevation="0" block>
+                Delete Label
+            </v-btn>
+        </v-card-actions>
+    </v-card>
+</v-menu>

@@ -1,0 +1,157 @@
+<v-card
+    class="board-menu rounded-0"
+    width="350"
+    height="100%"
+    :class="{'board-menu--hidden': !opened}"
+>
+    <v-navigation-drawer
+        color="grey lighten-5"
+        permanent
+        right
+        width="100%"
+    >
+        <v-window v-model="window" class="fill-height">
+            <!--Default window-->
+            <v-window-item class="fill-height">
+                    <v-card-title class="pa-2">
+                        <v-spacer></v-spacer>
+                        <small>Menu</small>
+                        <v-spacer></v-spacer>
+                        <v-btn small icon @click="close()">
+                            <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                    </v-card-title>
+                    <v-divider></v-divider>
+                    <v-card-text class="pa-2">
+                        <v-list-item link @click="window = 1">
+                            <v-list-item-action>
+                                <v-icon>mdi-credit-card-multiple</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>About This Board</v-list-item-title>
+                                <v-list-item-subtitle>Describe your board.</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <v-list-item link @click="window = 2">
+                            <v-list-item-action>
+                                <div class="rounded-md" :style="'width: 24px;height: 24px;background: '+board.background"></div>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>Change Background</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <v-list-item link @click="window = 3">
+                            <v-list-item-action>
+                                <v-icon>mdi-magnify</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>Search Cards</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <v-list-item link @click="window = 4">
+                            <v-list-item-action>
+                                <v-icon>mdi-label-outline</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>Labels</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <v-list-item link @click="window = 5">
+                            <v-list-item-action>
+                                <v-icon>mdi-archive</v-icon>
+                            </v-list-item-action>
+                            <v-list-item-content>
+                                <v-list-item-title>Archived Items</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                        <close-board :board="board"></close-board>
+                    </v-card-text>
+            </v-window-item>
+
+            <!--Board about item-->
+            <v-window-item class="fill-height">
+                <v-card-title class="pa-2">
+                    <v-btn small icon @click="window = 0">
+                        <v-icon>mdi-arrow-left</v-icon>
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <small>About This Board</small>
+                    <v-spacer></v-spacer>
+                    <v-btn small icon @click="close()">
+                        <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                </v-card-title>
+                <v-divider></v-divider>
+                <about-board :board="board"></about-board>
+            </v-window-item>
+
+            <!--Change background board-->
+            <v-window-item class="fill-height">
+                <v-card-title class="pa-2">
+                    <v-btn small icon @click="window = 0">
+                        <v-icon>mdi-arrow-left</v-icon>
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <small>Change Background</small>
+                    <v-spacer></v-spacer>
+                    <v-btn small icon @click="close()">
+                        <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                </v-card-title>
+                <v-divider></v-divider>
+                <change-board-background :board="board"></change-board-background>
+            </v-window-item>
+            
+            <!--Search for cards-->
+            <v-window-item class="fill-height">
+                <v-card-title class="pa-2">
+                    <v-btn small icon @click="window = 0">
+                        <v-icon>mdi-arrow-left</v-icon>
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <small>Search Cards</small>
+                    <v-spacer></v-spacer>
+                    <v-btn small icon @click="close()">
+                        <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                </v-card-title>
+                <v-divider></v-divider>
+                <search-cards :board="board"></search-cards>
+            </v-window-item>
+
+            <!--Labels-->
+            <v-window-item class="fill-height">
+                <v-card-title class="pa-2">
+                    <v-btn small icon @click="window = 0">
+                        <v-icon>mdi-arrow-left</v-icon>
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <small>Labels</small>
+                    <v-spacer></v-spacer>
+                    <v-btn small icon @click="close()">
+                        <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                </v-card-title>
+                <v-divider></v-divider>
+                <board-labels :board="board"></board-labels>
+            </v-window-item>
+            
+            <!--Archived Items-->
+            <v-window-item class="fill-height">
+                <v-card-title class="pa-2">
+                    <v-btn small icon @click="window = 0">
+                        <v-icon>mdi-arrow-left</v-icon>
+                    </v-btn>
+                    <v-spacer></v-spacer>
+                    <small>Archive</small>
+                    <v-spacer></v-spacer>
+                    <v-btn small icon @click="close()">
+                        <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                </v-card-title>
+                <v-divider></v-divider>
+                <board-archive :board="board"></board-archive>
+            </v-window-item>
+        </v-window>
+    </v-navigation-drawer>
+</v-card>

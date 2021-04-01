@@ -1,0 +1,6 @@
+<div :class="{'green white--text': completed >= total}" class="d-flex align-center pa-1 mb-1 rounded" v-if="total >= 1">
+    <v-icon  :class="{'white--text': completed >= total}" small left>
+        mdi-checkbox-marked-outline
+    </v-icon>
+    <small>{{ completed }}/{{ total }}</small>
+</div>

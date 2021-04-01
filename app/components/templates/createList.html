@@ -1,0 +1,39 @@
+<section>
+    <v-btn 
+        class="btn-light py-2" 
+        elevation="0" 
+        @click="open()"
+        v-show="!opened"
+    >
+        <v-icon>mdi-plus</v-icon>
+        {{ lists.length > 0 ? 'Add another list' : 'Add a list' }}
+    </v-btn>
+
+    <v-card v-show="opened" width="300">
+        <v-form class="pa-2" @submit.prevent="createList">
+            <v-text-field
+                v-model="title"
+                autofocus
+                autocomplete="off"
+                outlined
+                dense
+                placeholder="Enter List title"
+                :hide-details="true"
+            ></v-text-field>
+            <v-card-actions class="pa-0 pt-2">
+                <v-btn
+                    type="submit"
+                    elevation="0"
+                    color="green"
+                    dark
+                >Add list</v-btn>
+                <v-btn
+                    icon
+                    @click="close()"
+                >
+                    <v-icon>mdi-close</v-icon>
+                </v-btn>
+            </v-card-actions>
+        </v-form>
+    </v-card>
+</section>

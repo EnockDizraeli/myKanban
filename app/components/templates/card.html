@@ -1,0 +1,20 @@
+<div>
+    <v-card elevation="1">
+        <router-link :to="{name: 'boardCard',params: {'id': card.boardID,'cardID': card.id}}" 
+            tag="div" 
+            class="card" 
+            v-show="!opened"
+        >
+            <!--Edit icon on top right-->
+            <v-btn icon @click.prevent="open()" class="card_edit-btn" v-if="editable">
+                <v-icon small>mdi-pencil</v-icon>
+            </v-btn>
+            <card-label-chips :card="card"></card-label-chips>
+            <v-card-text class="pa-2 py-0">
+                <b class="font-weight-regular text--blue-grey text--darken-1">{{ card.title }}</b>
+            </v-card-text>
+            <card-chips class="px-2 mt-1" :card="card"></card-chips>
+        </router-link>
+    </v-card>
+    <open-card @close="close()" :card="card" v-show="opened"></open-card>
+</div>

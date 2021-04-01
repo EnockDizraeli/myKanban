@@ -1,0 +1,46 @@
+<section class="d-flex flex-column">
+    <div>
+        <h4 class="text-uppercase mb-2">Add to card</h4>
+        <edit-card-labels ref="cardLabels" :card="card">
+            <v-btn @click="$refs.cardLabels.open()" elevation="0" class="btn-custom-grey mb-2" block>
+                <v-icon dense size="20" class="mr-3">mdi-label-outline</v-icon>
+                Labels
+                <v-spacer></v-spacer>
+            </v-btn>    
+        </edit-card-labels>
+
+        <add-checklist ref="addChecklist" :card="card">
+            <v-btn @click="$refs.addChecklist.open()" elevation="0" class="btn-custom-grey mb-2" block>
+                <v-icon dense size="20" class="mr-3">mdi-checkbox-marked-outline</v-icon>
+                Checklist
+                <v-spacer></v-spacer>
+            </v-btn>
+        </add-checklist>
+
+        <edit-card-schedule ref="scheduleCard" :card="card">
+            <v-btn @click="$refs.scheduleCard.open()" elevation="0" class="btn-custom-grey" block>
+                <v-icon dense size="20" class="mr-3">mdi-clock</v-icon>
+                Due Date
+                <v-spacer></v-spacer>
+            </v-btn>
+        </edit-card-schedule>
+    </div>
+    <div class="mt-4">
+        <h4 class="text-uppercase mb-2">Actions</h4>
+        <move-card :card="card" ref="moveCard">
+            <v-btn @click="$refs.moveCard.open()" elevation="0" class="btn-custom-grey mb-2" block>
+                <v-icon dense size="20" class="mr-3">mdi-arrow-right</v-icon>
+                Move
+                <v-spacer></v-spacer>
+            </v-btn>      
+        </move-card>
+        <copy-card :card="card" ref="copyCard">
+            <v-btn @click="$refs.copyCard.open()" elevation="0" class="btn-custom-grey mb-2" block>
+                <v-icon dense size="20" class="mr-3">mdi-content-copy</v-icon>
+                Copy
+                <v-spacer></v-spacer>
+            </v-btn>      
+        </copy-card>
+        <archive-card :card="card"></archive-card>
+    </div>    
+</section>

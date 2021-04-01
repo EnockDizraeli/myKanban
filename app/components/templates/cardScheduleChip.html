@@ -1,0 +1,8 @@
+<div class="d-flex align-center pa-1 mb-1 rounded" 
+    v-if="card.schedule" 
+    :class="{'yellow darken-4 white--text': overdue}">
+    <v-icon small left :class="{'white--text': overdue}">
+        mdi-clock
+    </v-icon>
+    <small>{{ card.schedule | scheduleFilter }}</small>
+</div>

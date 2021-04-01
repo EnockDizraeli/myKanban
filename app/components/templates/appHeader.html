@@ -1,0 +1,31 @@
+<div elevation="0" class="rounded-0 d-flex flex-column">
+    <v-app-bar
+        class="px-0"
+        :style="inBoard ? 'background-color: rgba(0, 0, 0, 0.25)' : 'background-color: #0D47A1' "
+        dark
+        flat
+        dense
+    >
+        <!--Buttons on the left-->
+        <div class="d-flex align-center">
+            <header-more></header-more>
+            <v-btn @click="goHome()" small icon class="btn-light pa-5 ml-1">
+                <v-icon>mdi-home</v-icon>
+            </v-btn>
+            <header-boards></header-boards>
+            <header-search></header-search>
+        </div>
+        <v-spacer></v-spacer>
+        <router-link to="/boards" tag="h3" class="app-title d-flex align-center cursor-pointer">
+            <v-icon left>mdi-credit-card-multiple</v-icon>
+            MyKanban
+        </router-link>
+        <v-spacer></v-spacer>
+        <!--Buttons on the right-->
+        <div class="d-flex align-center">
+            <header-create></header-create>
+            <header-information></header-information>
+            <header-notifications></header-notifications>
+        </div>
+    </v-app-bar>
+</div>

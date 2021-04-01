@@ -1,0 +1,15 @@
+<div class="d-flex flex-column mb-2">
+    <checklist-header 
+        :showingCompleted="showingCompleted"
+        @toggleShowingCompleted="toggleShowingCompleted" 
+        :checklist="checklist" 
+    />
+    <checklist-body 
+        :checklist="checklist" 
+        :showingCompleted="showingCompleted"
+    />
+    <add-checklist-item 
+        class="mt-2 ml-5" 
+        :checklist="checklist"
+    />
+</div>

@@ -1,0 +1,50 @@
+<v-menu
+    offset-y
+    v-model="opened"
+>
+    <template v-slot:activator="{ on }">
+        <v-btn 
+            small 
+            icon 
+            class="btn-light pa-5 ml-1"
+            v-on="on"
+        >
+            <v-icon>mdi-information-outline</v-icon>
+        </v-btn>
+    </template>
+
+    <v-card
+        width="350"
+    >
+        <v-card-title class="pa-3">
+            <v-spacer></v-spacer>
+            <small>Information</small>
+            <v-spacer></v-spacer>
+            <v-btn
+                icon
+                small
+                @click="close()"
+            >
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text>
+            <h5>What is this?</h5>
+            <p>
+                myKanban is a free and open source kanban app.<br/>
+                It draws inspiration from industry leaders withut charging a single cent.<br/>
+                It can be used offline in a browser environment.<br/>
+                Join our online communities to share your ideas on what you would like to see in future versions.<br/>
+            </p>
+            <v-divider></v-divider>
+            <div class="d-flex justify-space-between flex-wrap py-2">
+                <a href="">Github</a>
+                <a href="">Sponsor</a>
+                <a href="">Facebook</a>
+                <a href="">Twitter</a>
+                <a href="">Reddit</a>
+            </div>
+        </v-card-text>
+    </v-card>
+</v-menu>

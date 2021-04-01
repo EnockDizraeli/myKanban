@@ -1,0 +1,23 @@
+<v-menu
+    offset-y
+    :close-on-content-click="false"
+    v-model="opened"
+>
+    <template v-slot:activator="{ on }">
+        <v-btn dense class="btn-light ml-1" v-on="on">
+            <v-icon left dense>mdi-credit-card-multiple</v-icon>
+            Boards
+        </v-btn>
+    </template>
+
+    <v-card width="300">
+        <header-boards-find 
+            @close="close"
+            @start="searching = true"
+            @end="searching = false"
+        ></header-boards-find>
+        <header-boards-list
+            v-show="!searching"
+        ></header-boards-list>
+    </v-card>
+</v-menu>

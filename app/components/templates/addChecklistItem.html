@@ -1,0 +1,28 @@
+<div class="d-flex flex-column">
+    <div v-show="!opened">
+        <v-btn @click="open" class="btn-custom-grey ml-5 mb-2" elevation="0">
+            Add an item
+        </v-btn>
+        <v-spacer></v-spacer>
+    </div>
+
+    <v-form @submit.prevent="addItem()" v-show="opened">
+        <v-text-field
+            autocomplete="off"
+            autofocus
+            filled
+            dense
+            placeholder="Add an item"
+            hide-details="auto"
+            v-model="title"
+        ></v-text-field>
+        <div class="d-flex align-center pt-2">
+            <v-btn @click="addItem()" color="green white--text" class="text-none" elevation="0">
+                Add
+            </v-btn>
+            <v-btn icon @click="close()">
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+        </div>
+    </v-form>
+</div>

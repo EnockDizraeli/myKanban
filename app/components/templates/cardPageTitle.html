@@ -1,0 +1,28 @@
+<div class="d-flex flex-column">
+    <div v-show="!opened">
+        <div class="d-flex align-start">
+            <div>
+                <v-icon size="30">
+                    mdi-credit-card
+                </v-icon>
+            </div>
+            <div class="d-flex flex-column ml-3" style="flex-grow: 1">
+                <span class="d-block w-100 cursor-pointer" @click="openEditor()">
+                    <h2 style="font-size: 1.5rem">{{ card.title }}</h2>
+                </span>
+                <small class="text-body-2 mt-2" v-if="list">
+                    in List
+                    <move-card ref="moveCard" :card="card">
+                        <u class="cursor-pointer" @click="$refs.moveCard.open()">{{ list.title }}</u>
+                    </move-card>
+                </small>
+            </div>
+        </div>
+    </div>
+    <edit-card-page-title 
+        @close="close()" 
+        ref="editor" 
+        v-show="opened" 
+        :card="card">
+    </edit-card-page-title>
+</div>

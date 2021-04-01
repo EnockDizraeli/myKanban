@@ -1,0 +1,13 @@
+<v-form @submit.prevent="saveCard" elevation="0">
+    <v-textarea
+        elevation="0"
+        @keydown="handleKeyDown"
+        background-color="white"
+        solo
+        flat
+        rows="4"
+        autofocus
+        v-model="title"
+        :hide-details="true"
+    ></v-textarea>
+</v-form>

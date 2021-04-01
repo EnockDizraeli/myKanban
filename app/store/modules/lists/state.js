@@ -1,0 +1,6 @@
+define([],
+() => {
+    return {
+        lists: []
+    };
+});

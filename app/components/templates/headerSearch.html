@@ -1,0 +1,35 @@
+<v-menu
+    offset-y
+    v-model="opened"
+>
+    <template v-slot:activator="{ on }">
+        <v-text-field
+            @keydown="open"
+            @focus="open"
+            append-icon="mdi-magnify"
+            color="primary"
+            solo-inverted
+            dense
+            class="ml-1 btn-light"
+            hide-details="auto"
+            clearable
+            v-model="keyword"
+        ></v-text-field>
+    </template>
+
+    <v-card width="500" color="grey lighten-4" style="max-height: 85vh;overflow-y: auto;overflow-x: hidden;">
+        <v-card-text class="pa-2">
+            <header-search-results :results="results"></header-search-results>
+            <!--No results-->
+            <div class="pa-3 d-flex justify-center" v-if="noResults">
+                <b class="text-center font-weight-thin">Sorry I found nothing matching that keyword.</b>
+            </div>
+
+            <!--Not yet typed-->
+            <div class="pa-3 d-flex flex-column justify-center" v-if="prompt">
+                <v-icon large>mdi-magnify</v-icon>
+                <b class="text-center font-weight-thin">Type in anything, I'll look through your cards and boards.</b>
+            </div>
+        </v-card-text>
+    </v-card>
+</v-menu>

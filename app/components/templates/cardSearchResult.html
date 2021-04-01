@@ -1,0 +1,16 @@
+<v-container class="mb-1 pa-0">
+    <v-row>
+        <v-col md="4">
+            <card :editable="false" :card="card"></card>
+        </v-col>
+        <v-col md="8" class="px-1">
+            <div class="d-flex flex-column">
+                <h3>{{ card.title }}</h3>
+                <div class="d-inline-block" v-if="board && list">
+                    in <b  class="blue-grey--text text--darken-3">{{ list.title }}</b> on 
+                    <router-link :to="{name: 'board',params: {id: board.id}}" tag="b" class="cursor-pointer blue-grey--text text--darken-3">{{ board.title }}</router-link>
+                </div>
+            </div>
+        </v-col>
+    </v-row>
+</v-container>

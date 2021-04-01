@@ -1,0 +1,24 @@
+<v-form @submit.prevent="saveCard">
+    <v-textarea
+        background-color="white"
+        @keydown="handleKeyDown"
+        solo
+        rows="2"
+        @blur="saveCard"
+        autofocus
+        v-model="title"
+        :hide-details="true"
+    ></v-textarea>
+    <div class="d-flex align-center py-2">
+        <v-btn
+            @click="saveCard()"
+            color="green"
+            class="white--text text-none"
+            elevation="0"
+        >Save</v-btn>
+        <v-btn icon @click="close()">
+            <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
+    </div>
+</v-form>

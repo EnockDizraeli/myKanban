@@ -1,0 +1,35 @@
+<v-dialog
+    v-model="opened"
+    width="500"
+>
+    <template v-slot:activator="{ on }">
+        <slot v-on="on"></slot>
+    </template>
+    <v-form ref="form" @submit.prevent="createBoard" v-model="valid">
+        <v-card>
+            <v-card-title class="pb-0">
+                <v-btn class="ml-auto" @click="opened = false" icon small>
+                    <v-icon dense>mdi-close</v-icon>
+                </v-btn>
+            </v-card-title>
+            <v-card-text class="pl-3 pb-0">
+                <v-row class="px-0">
+                    <v-col
+                        md="9"
+                        class="pb-0"
+                    >
+                        <v-text-field autofocus autocomplete="off" :rules="titleRules" v-model="title" dense filled label="Board title"></v-text-field>
+                    </v-col>
+                    <v-col
+                        md="3"
+                    >
+                        <create-board-background-picker v-model="background"></create-board-background-picker>
+                    </v-col>
+                </v-row>
+            </v-card-text>
+            <v-card-actions>
+                <v-btn color="green" type="submit" class="white--text" :disabled="!valid">Create board</v-btn>
+            </v-card-actions>
+        </v-card>
+    </v-form>
+</v-dialog>

@@ -1,0 +1,6 @@
+define([],
+() => {
+    return {
+        boards: []
+    };
+});

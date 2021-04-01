@@ -1,0 +1,16 @@
+<section class="d-flex flex-column pa-4">
+    <search-labels
+        :board="board"
+        @start="searching = true"
+        @end="searching = false"
+    ></search-labels>
+
+    <div class="d-flex flex-column mt-4" >
+        <labels-list 
+            v-show="!searching"
+            :labels="labels"
+        ></labels-list>
+    </div>
+
+    <create-label :board="board"></create-label>
+</section>

@@ -1,0 +1,35 @@
+<v-menu
+    offset-y
+    v-model="opened"
+>
+    <template v-slot:activator="{ on }">
+        <v-btn 
+            small 
+            icon 
+            class="btn-light pa-5 ml-1"
+            v-on="on"
+        >
+            <v-icon>mdi-bell-outline</v-icon>
+        </v-btn>
+    </template>
+
+    <v-card width="350">
+        <v-card-title class="pa-3">
+            <v-spacer></v-spacer>
+            <small>Notifications</small>
+            <v-spacer></v-spacer>
+            <v-btn icon small @click="close()">
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        
+        <v-card-text>
+            <div class="fill-height d-flex align-center justify-center">
+                <h3 class="text-center">No notifications</h3>
+            </div>
+        </v-card-text>
+    </v-card>
+
+
+</v-menu>

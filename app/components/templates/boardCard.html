@@ -1,0 +1,19 @@
+<router-link
+    tag="div"
+    :to="{name: 'board', params: {id: board.id}}"
+    :style="'background-color: '+board.background" 
+    class="board-card 
+        d-flex flex-column 
+        ml-4 mb-4 
+        pa-2
+        rounded-sm" 
+    v-ripple
+>
+    <h3 class="board-card_title">{{ board.title }}</h3>
+    <div class="board-card_star">
+        <v-btn icon color="white" @click.prevent="toggleStarred">
+            <v-icon v-if="board.starred">mdi-star</v-icon>
+            <v-icon v-else>mdi-star-outline</v-icon>
+        </v-btn>
+    </div>
+</router-link>

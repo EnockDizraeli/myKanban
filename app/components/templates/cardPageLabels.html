@@ -1,0 +1,20 @@
+<div class="d-flex flex-column" v-if="labels.length > 0">
+    <b>LABELS</b>
+    <div class="d-flex align-center mt-2">
+        <div 
+            @click="$refs.addLabel.open()"
+            :style="'background-color: '+label.color"
+            class="card-page-label rounded mr-2 white--text px-4 d-flex align-center cursor-pointer" 
+            v-for="label in labels"
+            v-ripple>
+            <b>
+                {{ label.name }}
+            </b>
+        </div>
+        <edit-card-labels ref="addLabel" :card="card">
+            <v-btn icon @click="$refs.addLabel.open()">
+                <v-icon>mdi-plus</v-icon>
+            </v-btn>
+        </edit-card-labels>
+    </div>
+</div>

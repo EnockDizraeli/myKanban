@@ -1,0 +1,16 @@
+<section>
+    <div class="d-flex flex-column mt-4">
+        <b class="grey--text text--darken-1">LABELS</b>
+        <app-label
+            v-for="label in labels" 
+            :label="label"
+            :card="card"
+        ></app-label>
+        <section v-if="labels.length <= 0" class="w-100" style="height: 200px">
+            <div class="d-flex flex-column align-center text-center justify-center fill-height">
+                <v-icon size="40">mdi-label-outline</v-icon>
+                <p class="mt-2">Use labels to better organize your cards.<br/>'Create a new label' to get started</p>
+            </div>
+        </section>
+    </div>
+</section>

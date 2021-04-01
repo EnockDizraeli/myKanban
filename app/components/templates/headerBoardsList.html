@@ -1,0 +1,43 @@
+<div class="pa-3" style="font-size: 0.875rem">
+    <section>
+        <div class="d-flex align-center">
+            <v-icon>mdi-star-outline</v-icon>
+            <b class="ml-2">STARRED BOARDS</b>
+            <v-spacer></v-spacer>
+            <v-btn icon @click="showingStarred ^= true">
+                <v-icon v-if="showingStarred">mdi-minus</v-icon>
+                <v-icon v-else>mdi-plus</v-icon>
+            </v-btn>
+        </div>
+        <div v-show="showingStarred">
+            <board-tape :board="board" v-for="board in starredBoards"></board-tape>
+        </div>
+    </section>
+    
+    <section>
+        <div class="d-flex align-center">
+            <v-icon>mdi-account-outline</v-icon>
+            <b class="ml-2">PERSONAL BOARDS</b>
+            <v-spacer></v-spacer>
+            <v-btn icon @click="showingPersonal ^= true">
+                <v-icon v-if="showingPersonal">mdi-minus</v-icon>
+                <v-icon v-else>mdi-plus</v-icon>
+            </v-btn>
+        </div>
+        <div v-show="showingPersonal">
+            <board-tape :board="board" v-for="board in boards"></board-tape>
+        </div>
+    </section>
+
+    <create-board ref="createBoard">
+        <v-btn
+        @click="$refs.createBoard.open()"
+        small
+        color="primary"
+        outlined 
+        elevation="0" 
+        class="mt-3" 
+        block
+        >Create new board</v-btn>
+    </create-board>
+</div>

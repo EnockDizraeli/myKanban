@@ -1,0 +1,20 @@
+<v-form @submit.prevent="saveChecklist()" class="d-flex flex-column">
+    <v-text-field
+        autofocus
+        dense
+        label="Title"
+        filled
+        hide-details="auto"
+        placeholder="Checklist title.."
+        v-model="title"
+    ></v-text-field>
+    <div class="pt-2">
+        <v-btn @click="saveChecklist()" color="green white--text text-none" elevation="0">
+            Save
+        </v-btn>
+        <v-btn icon @click="close()">
+            <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
+    </div>
+</v-form>

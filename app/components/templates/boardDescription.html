@@ -1,0 +1,16 @@
+<div>
+    <v-list-item>
+        <v-icon>mdi-view-headline</v-icon>
+        <v-list-item-title class="ml-2">Description</v-list-item-title>
+    </v-list-item>
+
+    <div class="cursor-pointer grey lighten-4 pa-3 text-body-2" @click="open()" v-show="!opened">
+        <p v-if="hasDescription">
+            {{ board.description }}
+        </p>
+        <p v-else>
+            What is this board about?What is your board is used for?.Click to add a description
+        </p>
+    </div>
+    <edit-board-description @close="close()" :board="board" v-show="opened"></edit-board-description>
+</div>

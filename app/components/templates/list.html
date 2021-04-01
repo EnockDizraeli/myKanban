@@ -1,0 +1,18 @@
+<v-card class="list d-flex flex-column grey lighten-4 mr-2" elevation="1" width="285">
+    <list-header 
+        @addCard="$refs.addCard.open()" 
+        class="pa-2 pl-3" 
+        :list="list"
+    ></list-header>
+    <list-body
+        class="pa-2 pt-0"
+        :list="list"
+    >
+        <slot></slot>
+    </list-body>
+    <add-card 
+        ref="addCard" 
+        class="pa-2" 
+        :list="list"
+    ></add-card>
+</v-card>

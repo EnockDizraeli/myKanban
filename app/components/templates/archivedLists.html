@@ -1,0 +1,20 @@
+<div class="d-flex flex-column">
+    <v-list-item class="d-flex px-0" v-for="list in lists" link>
+        <p class="my-0">{{ list.title }}</p>
+        <v-spacer></v-spacer>
+        <v-btn
+            @click="unarchiveList(list)"
+            elevation="0"
+            class="btn-custom-grey"
+        >
+            <v-icon left dense>mdi-reload</v-icon>
+            Send to Board
+        </v-btn>
+    </v-list-item>
+    <section v-if="lists.length <= 0" class="w-100" style="height: 200px">
+        <div class="d-flex flex-column align-center text-center justify-center fill-height">
+            <v-icon size="40">mdi-archive</v-icon>
+            <p class="mt-2">No lists have been archived.</p>
+        </div>
+    </section>
+</div>

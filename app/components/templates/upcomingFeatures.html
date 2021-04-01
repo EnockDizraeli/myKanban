@@ -1,0 +1,22 @@
+<v-container>
+    <h2>Upcoming Features</h2>
+    <p>The following features are planned for the upcoming releases of 'myKanban'.
+        <br/>View on github for progress.</p>
+    <v-container>
+        <v-row>
+            <v-col md="4" v-for="feature in features">
+                <v-card>
+                    <v-card-title class="d-flex flex-column">
+                        <v-icon size="50" class="mx-auto" style="text-align: center;">
+                            {{ feature.icon }}
+                        </v-icon>
+                        <b class="text-center">{{ feature.title }}</b>
+                    </v-card-title>
+                    <v-card-text class="text-center">
+                        {{ feature.description }}
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
+</v-container>

@@ -1,0 +1,17 @@
+<div>
+    <div v-show="!opened">
+        <div class="checklist-item d-flex align-center">
+            <v-btn @click.prevent="toggleComplete()" icon>
+                <v-icon color="blue" v-if="item.completed">mdi-checkbox-marked</v-icon>
+                <v-icon v-else>mdi-checkbox-blank-outline</v-icon>
+            </v-btn>
+            <b @click="open()" :class="{'text-decoration-line-through': item.completed}">{{ item.title }}</b>
+            <v-btn class="checklist-item_delete ml-auto" icon @click.prevent="deleteItem">
+                <v-icon size="22">mdi-close-circle-outline</v-icon>
+            </v-btn>
+        </div>
+    </div>
+    <div v-show="opened">
+        <edit-checklist-item @close="close()" :item="item"></edit-checklist-item>
+    </div>
+</div>

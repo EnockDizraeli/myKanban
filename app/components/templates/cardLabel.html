@@ -1,0 +1,14 @@
+<div class="label-bar mt-2">
+    <div 
+        @click="toggleLabel()"
+        :style="'background-color: '+label.color" 
+        class="label-bar_color rounded pl-3 cursor-pointer" 
+        v-ripple>
+        <b class="white--text">{{ label.name }}</b>
+        <v-spacer></v-spacer>
+        <v-icon class="pa-1" size="15" color="white" v-show="labeled">
+            mdi-check
+        </v-icon>
+    </div>
+    <edit-label :label="label"></edit-label>
+</div>

@@ -1,0 +1,40 @@
+<v-menu 
+    v-model="opened"
+    offset-y
+    >
+    <template v-slot:activator="{ on }">
+        <v-btn 
+            small 
+            icon 
+            class="btn-light pa-5"
+            v-on="on"
+        >
+            <v-icon>mdi-apps</v-icon>
+        </v-btn>
+    </template>
+
+    <v-card width="350">
+        <v-card-title>
+            <v-spacer></v-spacer>
+            <small>More by <a target="_blank" href="https://github.com/EnockDizraeli/">EnockDizraeli</a></small>
+            <v-spacer></v-spacer>
+            <v-btn icon small @click="close()">
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+
+        <v-card-text>
+            <h4>DISCOVER</h4>
+            <v-list-item v-for="app in apps" link @click="window.open( app.url )">
+                <v-list-item-action>
+                    <v-img width="35" height="35" :src="app.icon"></v-img>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title>{{ app.name }}</v-list-item-title>
+                    <small class="text--secondary text-md-body-2">{{ app.description }}</small>
+                </v-list-item-content>
+            </v-list-item>
+        </v-card-text>
+    </v-card>
+</v-menu>

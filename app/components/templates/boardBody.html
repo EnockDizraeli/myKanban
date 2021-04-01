@@ -1,0 +1,33 @@
+<section class="board-body" v-dragscroll="!dragging">
+    <div class="lists-wrapper ml-5">
+        <Container 
+            class="lists-wrapper"
+            v-on:drag-start="dragging = true"
+            v-on:drag-end="dragging = false"
+            drag-class="drag-list"
+            :drop-placeholder="listPlaceholder"
+            @drop="handleListDrop"
+            orientation="horizontal"
+            drag-handle-selector=".list"
+        >
+            <Draggable class="list-wrapper" v-for="list in lists">
+                <list :list="list">
+                    <Container
+                        group-name="cards"
+                        drag-class="card-drag"
+                        :drop-placeholder="cardPlaceholder"
+                        @drop="(e) => handleCardDrop(list.id, e)"
+                        :get-child-payload="(index) => list.cards[index]"
+                        non-drag-area-selector=".open-card"
+                    >
+                        <Draggable class="card-wrapper" v-for="card in list.cards">
+                            <card :card="card"></card>
+                        </Draggable>
+                    </Container>
+                </list>
+            </Draggable>
+        </Container>
+        <create-list :board="board" class="list-wrapper"></create-list>
+    </div>
+
+</section>

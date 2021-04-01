@@ -1,0 +1,6 @@
+<div class="d-flex flex-column">
+    <div>
+        <archived-lists :lists="lists" v-if="showingList"></archived-lists>
+        <archived-cards :cards="cards" v-else></archived-cards>
+    </div>
+</div>

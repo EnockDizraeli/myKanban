@@ -1,0 +1,9 @@
+<div class="label-bar mt-2">
+    <div 
+        :style="'background-color: '+label.color" 
+        class="label-bar_color rounded pl-3 cursor-pointer" 
+        v-ripple>
+        <b class="white--text">{{ label.name }}</b>
+    </div>
+    <edit-label :label="label"></edit-label>
+</div>

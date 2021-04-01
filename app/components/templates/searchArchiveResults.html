@@ -1,0 +1,15 @@
+<section class="d-flex flex-column">
+    <!--Card search results-->
+    <section v-if="cards.length > 0">
+        <h4 class="text-uppercase">Cards</h4>
+        <archived-cards @update="$emit('update')" :cards="cards"></archived-cards>
+    </section>
+    <!--end Card search results-->
+
+    <!--List search results-->
+    <section v-if="lists.length > 0">
+        <h4 class="text-uppercase">Lists</h4>
+        <archived-lists @update="$emit('update')" :lists="lists"></archived-lists>
+    </section>
+    <!--end list search results-->
+</section>

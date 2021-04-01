@@ -1,0 +1,272 @@
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.mdi{
+    font-family: 'MaterialDesignIcons'!important;
+}
+#preloader{
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    position: absolute;
+    transition: all .5s ease-in;
+    width: 100vw;
+}
+.preloader_content{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.preloader_content > *{
+    display: flex;
+}
+.preloader_content > * + *{
+    margin-top: 1.5rem;
+}
+.preloader_icon{
+    background-image: url(../favicon.png);
+    border-radius: 10%;
+    background-size: cover;
+    height: 7rem;
+    width: 7rem;
+}
+@keyframes spin{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+.preloader_spinner{
+    animation: spin 1s linear infinite;
+    border: 4px solid #1877f2;
+    border-bottom-color: transparent;
+    border-radius: 100%;
+    height: 2rem;
+    width: 2rem;
+}
+/*--Board card--*/
+.board-card{
+    background-color: #1877f2;
+    cursor: pointer;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    width: 20%;
+}
+.board-card_title{
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+.board-card_star{
+    bottom: -2.5rem;
+    position: absolute;
+    transition: all 0.15s ease-in;
+    right: 0;
+}
+.board-card:hover .board-card_star{
+    bottom: 0;
+}
+
+/*--Checklist item--*/
+.checklist-item{
+    overflow: hidden;
+    position: relative;
+
+}
+.checklist-item:hover{
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+.checklist-item_delete{
+    bottom: -2.5rem;
+    position: absolute;
+    transition: all 0.15s ease-in;
+    right: 0;
+}
+.checklist-item:hover .checklist-item_delete{
+    bottom: 0;
+}
+.card-label-chip{
+    background-color: aqua;
+    width: 35px;
+    height: 9px;
+}
+.card-page-label{
+    background-color: aqua;
+    min-width: 65px;
+    max-width: 140px;
+    min-height: 35px;
+    max-height: 50px;
+}
+.label-color-pick{
+    background-color: aqua;
+    cursor: pointer;
+    width: 100%;
+    min-height: 40px;
+}
+.board-color-pick{
+    cursor: pointer;
+    width: 100%;
+    min-height: 30px;
+}
+.board-color-pick--tall{
+    width: 100%;
+    min-height: 60px;
+}
+.stick-divider{
+    color: rgba(255, 255, 255, 0.705);
+    margin: 0 0.5rem;
+}
+.stick-divider::after{
+    content: "|";
+}
+.btn-light{
+    background-color: rgba(255, 255, 255, 0.288)!important;
+    color: #ffffff!important;
+    text-transform: capitalize!important;
+}
+.btn-dark{
+    background-color: rgba(0, 0, 0, 0.699)!important;
+    color: #ffffff!important;
+    text-transform: capitalize!important;
+}
+.btn-custom-grey{
+    background-color: #E0E0E0!important;
+    color: #37474f!important;
+    cursor: pointer;
+    font-size: 0.875rem!important;
+    line-height: 1.25rem;
+    text-transform: none!important;
+    letter-spacing: .0178571429em!important;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.board-tape{
+    align-items: center;
+    display: flex;
+    font-size: .875rem;
+}
+.board-tape_star{
+    opacity: 0;
+}
+.board-tape:hover .board-tape_star{
+    opacity: 1;
+}
+.app-title{
+    color: #ffffff;
+    opacity: 0.75;
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    right: 50%;
+}
+
+.grab-bing {
+    cursor : -webkit-grab;
+    cursor : -moz-grab;
+    cursor : -o-grab;
+    cursor : grab;
+}
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: blue orange;
+}
+  
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+  
+*::-webkit-scrollbar-track {
+    background: rgba(255, 166, 0, 0);
+}
+  
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(77, 77, 77);
+    border-radius: 20px;
+    border: none;
+}
+.drag-list{
+    box-shadow: 0 5px 3px #cccccc;
+    transform: rotateZ(5deg);
+}
+.list-wrapper{
+    min-height: 30px;
+}
+.list-placeholder{
+    background-color: rgba(0, 0, 0, 0.384);
+    border-radius: 0.25rem;
+    margin-left: 12px;
+}
+.card-placeholder{
+    border: 1px dashed #6b6b6b;
+    border-radius: 0.25rem;
+}
+.card-wrapper{
+    overflow: visible!important;
+}
+.card-wrapper + .card-wrapper{
+    margin-top: 8px;
+}
+.card-drag{
+    transform: rotateZ(5deg);
+}
+.card{
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all .1s ease-in;
+}
+.card:active{
+    background-color: #e9e9e9;
+}
+.card_edit-btn{
+    background-color: #ffffff93;
+    position: absolute;
+    transition: top 0.2s ease-in;
+    top: -3rem;
+    right: 0;
+}
+.card:hover .card_edit-btn{
+    top: 0;
+}
+/*--Board page--*/
+/*--Observe the relationship between the board body and the board menu--*/
+.board{
+    position: relative;
+}
+.board-body{
+    min-height: 84.5vh;
+    overflow-x: auto;
+}
+.lists-wrapper{
+    align-items: flex-start;
+    display: flex;
+}
+.board-menu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: right 0.2s ease-in;
+}
+.board-menu--hidden{
+    right: -360px;
+}
+.label-bar{
+    align-items: stretch;
+    display: flex;
+    height: 2rem;
+}
+.label-bar_color{
+    align-items: center;
+    display: flex;
+    flex-basis: 100%;
+}

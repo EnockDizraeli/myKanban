@@ -1,0 +1,29 @@
+<v-card width="350">
+    <v-card-title class="pa-2">
+        <h3 class="mx-auto">Board is closed</h3>
+    </v-card-title>
+    <v-divider></v-divider>
+    <v-card-text class="pa-2">
+        <p class="text-center">The board '{{board.title}}' has been closed.You can re-open it to bring it back or you can totally remove it by deleting.</p>
+    </v-card-text>
+    <v-divider></v-divider>
+    <v-card-actions class="pa-2">
+        <v-btn
+            @click="openBoard()"
+            color="green white--text"
+            class="text-none"
+            elevation="0"
+        >
+            Open Board
+        </v-btn>
+        <v-spacer></v-spacer>
+        <v-btn
+            @click="deleteBoard()"
+            color="red darken-3 white--text"
+            class="text-none"
+            elevation="0"
+        >
+            Delete Board
+        </v-btn>
+    </v-card-actions>
+</v-card>

@@ -1,0 +1,25 @@
+<v-form
+    class="text-body-2"
+    @submit.prevent="saveDescription()"
+>
+    <v-textarea
+        placeholder="Describe this card more..."
+        autofocus
+        rows="2"
+        solo
+        hide-details="auto"
+        v-model="description"
+    ></v-textarea>
+    <div class="d-flex align-center py-2">
+        <v-btn
+            @click="saveDescription()"
+            color="green"
+            class="white--text text-none"
+            elevation="0"
+        >Save</v-btn>
+        <v-btn icon @click="close()">
+            <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
+    </div>
+</v-form>

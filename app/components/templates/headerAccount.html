@@ -1,0 +1,35 @@
+<v-menu
+    offset-y
+    v-model="opened"
+>
+    <template v-slot:activator="{ on }">
+        <v-avatar size="36" color="grey lighten-5 ml-1 cursor-pointer" v-on="on">
+            <span class="black--text">GE</span>
+        </v-avatar>
+    </template>
+
+    <v-card width="350">
+        <v-card-title class="pa-3">
+            <v-spacer></v-spacer>
+            <small>Account</small>
+            <v-spacer></v-spacer>
+            <v-btn @click="close" icon small>
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text class="pa-0">
+            <v-list-item>
+                <v-list-item-action>
+                    <v-avatar size="50" color="grey lighten-2 ml-1 cursor-pointer">
+                        <span class="black--text">GE</span>
+                    </v-avatar>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title>Guest</v-list-item-title>
+                    <v-list-item-subtitle>guest@example.com</v-list-item-subtitle>
+                </v-list-item-content>
+            </v-list-item>
+        </v-card-text>
+    </v-card>
+</v-menu>

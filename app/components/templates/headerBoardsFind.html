@@ -1,0 +1,37 @@
+<div class="pa-3 pb-0">
+    <div class="d-flex align-center">
+        <v-text-field
+            dense
+            outlined
+            placeholder="Find Boards by name"
+            hide-details="true"
+            autocomplete="off"
+            v-model="keyword"
+        ></v-text-field>
+        <v-btn
+            icon
+            @click="$emit('close')"
+            class="ml-2"
+        >
+            <v-icon>mdi-close</v-icon>
+        </v-btn>
+    </div>
+
+    <section class="py-4" v-show="searching">
+        <div v-if="boards.length > 0" class="d-flex flex-column">
+            <board-tape :board="board" v-for="board in boards"></board-tape>
+        </div>
+        <div class="pa-3 d-flex justify-center" v-else>
+            <b class="text-center font-weight-thin">No board found with that title.</b>
+        </div>
+
+        <!--Create board prompt-->
+        <create-board
+            ref="createBoard"
+        >
+            <div @click="$refs.createBoard.open().setTitle( keyword )" class="pa-2 mt-2 grey lighten-4 cursor-pointer" v-ripple>
+                <u>Create a board named `{{ keyword }}`</u>
+            </div>
+        </create-board>
+    </section>
+</div>

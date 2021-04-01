@@ -1,0 +1,11 @@
+<v-form @submit.prevent="editList">
+    <v-text-field
+        @blur="editList"
+        autofocus
+        dense
+        placeholder="List title.."
+        outlined
+        hide-details="auto"
+        v-model="title"
+    ></v-text-field>
+</v-form>

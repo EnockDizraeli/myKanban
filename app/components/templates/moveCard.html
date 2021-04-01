@@ -1,0 +1,83 @@
+<v-menu
+    offset-y
+    v-model="opened"
+    :close-on-content-click="false"
+>
+    <template v-slot:activator="{ on }">
+        <slot>
+            <v-btn class="btn-dark mt-1" v-on="on">
+                <v-icon left dense>mdi-arrow-right</v-icon>
+                Move
+            </v-btn>
+        </slot>
+    </template>
+    <v-form @submit.prevent="moveCard">
+        <v-card width="300">
+            <v-card-title class="pa-2">
+                <v-spacer></v-spacer>
+                <small>Move Card</small>
+                <v-spacer></v-spacer>
+                <v-btn
+                    icon
+                    small
+                    @click="close()"
+                >
+                    <v-icon>mdi-close</v-icon>
+                </v-btn>
+            </v-card-title>
+            <v-divider></v-divider>
+            <v-card-text class="pa-2">
+                <h4 class="text-uppercase">Select destination</h4>
+                <v-container class="pa-0 ma-0">
+                    <v-row>
+                        <v-col md="12">
+                            <v-select
+                                @change="updateList"
+                                dense 
+                                :hide-details="true" 
+                                label="Board" 
+                                filled
+                                :items="boards"
+                                item-text="title"
+                                item-value="id"
+                                v-model="boardID"
+                            ></v-select>
+                        </v-col>
+                        <v-col md="8">
+                            <v-select
+                                @change="updatePosition"
+                                dense 
+                                :hide-details="true" 
+                                label="List" 
+                                filled
+                                :items="lists"
+                                item-text="title"
+                                item-value="id"
+                                v-model="listID"
+                            ></v-select>
+                        </v-col>
+                        <v-col md="4">
+                            <v-select
+                                dense 
+                                :hide-details="true" 
+                                label="Position" 
+                                filled
+                                :items="positions"
+                                item-text="count"
+                                item-value="index"
+                                v-model="index"
+                            ></v-select>
+                        </v-col>
+                    </v-row>
+                </v-container>
+                    
+            </v-card-text>
+            <v-card-actions class="pa-2">
+                <v-btn color="green" class="white--text text-none" @click="moveCard" elevation="0">
+                    Move
+                </v-btn>
+                <v-spacer></v-spacer>
+            </v-card-actions>
+        </v-card>
+    </v-form>
+</v-menu>

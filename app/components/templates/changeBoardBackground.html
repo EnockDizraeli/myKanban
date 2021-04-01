@@ -1,0 +1,19 @@
+<div class="d-flex pl-2">
+    <v-container>
+        <v-row>
+            <v-col 
+                v-for="color in colors" 
+                md="6" 
+                class="pa-1"
+            >
+                <div
+                    @click="setBackground(color)"
+                    class="rounded-lg cursor-pointer d-flex align-center justify-center" 
+                    :style="'height: 100px;background: '+color.value" v-ripple
+                >
+                    <v-icon v-if="isBackground(color)" color="white" large>mdi-check</v-icon>
+                </div>
+            </v-col>
+        </v-row>
+    </v-container>
+</div>

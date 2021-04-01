@@ -1,0 +1,23 @@
+<div class="d-flex flex-column">
+    <div class="d-flex align-start">
+        <div>
+            <v-icon size="25">
+                mdi-view-headline
+            </v-icon>
+        </div>
+        <div class="d-flex flex-column ml-3" style="flex-grow: 1">
+            <h3>Description</h3>
+            <div class="mt-2">
+                <div class="cursor-pointer btn-custom-grey pa-3 text-body-2" @click="open()" v-show="!opened">
+                    <p v-if="hasDescription">
+                        {{ card.description }}
+                    </p>
+                    <p v-else>
+                        Describe this card more...
+                    </p>
+                </div>
+                <edit-card-description :card="card" v-show="opened" @close="close()"></edit-card-description>
+            </div>
+        </div>
+    </div>
+</div>

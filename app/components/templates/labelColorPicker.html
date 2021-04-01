@@ -1,0 +1,19 @@
+<div>
+    <b class="mx-0 px-0">Select a color</b>
+    <v-row class="mt-1">
+        <v-col 
+            md="3" 
+            class="pa-1"
+            v-for="color in colors"
+        >
+            <div
+                @click="setValue(color.value)"
+                class="label-color-pick rounded d-flex align-center justify-center"
+                :style="'background-color: '+color.value"
+                v-ripple
+            >
+                <v-icon v-if="color.value === value" color="white">mdi-check</v-icon>
+            </div>
+        </v-col>
+    </v-row>
+</div>

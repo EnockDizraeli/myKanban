@@ -1,0 +1,18 @@
+<section class="d-flex flex-column pt-3">
+    <search-archive 
+        @start="searching = true"
+        @end="searching = false"
+        class="px-3" 
+        :board="board"
+        :showingList="showingList"
+        @toggleShowingList="toggleShowingList()"
+    ></search-archive>
+
+    <section v-show="!searching">
+        <archive-body 
+            class="px-3" 
+            :board="board"
+            :showingList="showingList"
+        ></archive-body>
+    </section>
+</section>

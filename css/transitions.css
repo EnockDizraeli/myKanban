@@ -1,0 +1,10 @@
+.slideDown-enter-active, .slideDown-leave-active{
+    -webkit-transform:translateY(0);
+    transform:translateY(0);
+    transition: all .3s ease-in;
+}
+.slideDown-enter, .slideDown-leave-to{
+    opacity:0;
+    -webkit-transform:translateY(-2000px);
+    -ms-transform:translateY(-2000px);
+}

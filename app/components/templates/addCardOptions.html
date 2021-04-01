@@ -1,0 +1,32 @@
+<v-menu
+    v-model="opened"
+    offset-y
+    :close-on-content-click="false"
+>
+    <template v-slot:activator="{ on }">
+        <v-btn icon v-on="on">
+            <v-icon>mdi-dots-horizontal</v-icon>
+        </v-btn>
+    </template>
+
+    <v-card width="300">
+        <v-card-title class="pa-2">
+            <v-spacer></v-spacer>
+            <small>Options</small>
+            <v-spacer></v-spacer>
+            <v-btn icon @click="close()">
+                <v-icon size="20">mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-text class="pa-0">
+            <v-list dense class="pa-0">
+                <edit-card-labels :card="card" ref="labels">
+                    <v-list-item link @click="$refs.labels.open()">
+                        <v-list-item-title>Labels...</v-list-item-title>
+                    </v-list-item>
+                </edit-card-labels>
+            </v-list>
+        </v-card-text>
+    </v-card>
+</v-menu>

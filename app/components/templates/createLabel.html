@@ -1,0 +1,55 @@
+<v-menu
+    width="300"
+    top
+    offset-y
+    v-model="opened"
+    :close-on-content-click="false"
+>
+    <template v-slot:activator="{ on }">
+        <v-btn
+            v-on="on"
+            block
+            elevation="0"
+            class="btn-custom-grey mt-4"
+        >Create a new label</v-btn>
+    </template>
+    <v-form @submit.prevent="createLabel()">
+        <v-card 
+            width="100%"
+            elevation="0"
+        >
+            <v-card-title class="pa-2">
+                <v-spacer></v-spacer>
+                <small>Create Label</small>
+                <v-spacer></v-spacer>
+                <v-btn icon @click="close()">
+                    <v-icon size="20">mdi-close</v-icon>
+                </v-btn>
+            </v-card-title>
+            <v-divider></v-divider>
+            <v-card-text class="pa-2">
+                <v-text-field
+                    label="Name"
+                    hide-details="auto"
+                    dense
+                    filled
+                    autofocus
+                    v-model="name"
+                ></v-text-field>
+                <label-color-picker 
+                    :colors="colors" 
+                    class="mt-2 pa-2"
+                    v-model="color"
+                ></label-color-picker>
+            </v-card-text>
+            <v-card-actions class="pa-2">
+                <v-btn
+                    @click="createLabel()"
+                    color="green"
+                    class="white--text text-none"
+                    elevation="0"
+                >Create</v-btn>
+            </v-card-actions>
+        </v-card>
+    </v-form>
+</v-menu>

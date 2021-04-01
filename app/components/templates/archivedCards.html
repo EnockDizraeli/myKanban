@@ -1,0 +1,23 @@
+        <div class="d-flex flex-column pl-5">
+            <div class="d-flex flex-column" v-for="card in cards" :key="card.id">
+                <card 
+                    :card="card" 
+                    class="mt-3"
+                    :editable="false"
+                ></card>
+                <div class="d-flex align-center mt-2">
+                    <small @click="unarchiveCard(card)" class="cursor-pointer mr-2 grey--text text--darken-3">
+                        <u>Send to board</u>
+                    </small>
+                    <small @click="deleteCard(card)" class="cursor-pointer grey--text text--darken-3">
+                        <u>Delete</u>
+                    </small>
+                </div>
+            </div>
+            <section v-if="cards.length <= 0" class="w-100" style="height: 200px">
+                <div class="d-flex flex-column align-center text-center justify-center fill-height">
+                    <v-icon size="40">mdi-credit-card</v-icon>
+                    <p class="mt-2">No cards have been archived.</p>
+                </div>
+            </section>
+        </div>

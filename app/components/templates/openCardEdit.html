@@ -1,0 +1,18 @@
+<section class="d-flex flex-column" style="width: 100%; flex-shrink: 0;max-width: 300px;">
+
+    <div class="d-flex flex-column white rounded">
+        <card-label-chips class="px-3" :card="card"></card-label-chips>
+        <edit-card-title
+            style="width: 100%; flex-shrink: 0;"
+            :card="card"
+            @save="saveCard()"
+            ref="editTitle"
+        ></edit-card-title>
+        <card-chips class="pa-3 py-1" :card="card"></card-chips>
+    </div>
+
+    <div class="d-flex align-center mt-3">
+        <v-btn @click="saveCard" color="green" class="white--text">Save</v-btn>
+        <v-spacer></v-spacer>
+    </div>
+</section>

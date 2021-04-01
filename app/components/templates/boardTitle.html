@@ -1,0 +1,16 @@
+<div>
+    <v-form v-show="editing" @submit.prevent="saveTitle().exitEditMode()">
+        <v-text-field 
+            autofocus
+            @blur="saveTitle().exitEditMode()"
+            solo
+            hide-details="auto"
+            dense
+            placeholder="Board title"
+            color="white"
+            class="ma-0"
+            v-model="title"
+        ></v-text-field>
+    </v-form>
+    <h3 class="cursor-pointer" @click="enterEditMode()" v-show="!editing">{{ board.title }}</h3>
+</div>

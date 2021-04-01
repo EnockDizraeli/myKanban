@@ -1,0 +1,42 @@
+<v-menu
+    v-model="opened"
+    offset-y
+    :close-on-content-click="false"
+>
+    <template v-slot:activator="{ on }">
+        <slot>
+            <v-btn class="btn-dark" v-on="on">
+                <v-icon left dense>mdi-label-outline</v-icon>
+                Edit Labels
+            </v-btn>
+        </slot>
+    </template>
+    <v-card width="300"> 
+        <v-card-title class="pa-2">
+            <v-spacer></v-spacer>
+            <small>Labels</small>
+            <v-spacer></v-spacer>
+            <v-btn @click="close()" icon>
+                <v-icon size="20">mdi-close</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-divider></v-divider>
+
+        <search-labels
+            class="px-3 pt-2"
+            @start="searching = true"
+            @end="searching = false"
+            :board="board"
+            :card="card"
+        ></search-labels>
+
+        <v-card-text class="d-flex flex-column pa-2">
+            <labels-list
+                :labels="labels"
+                :card="card"
+                v-show="!searching"
+            ></labels-list>
+            <create-label :board="board"></create-label>
+        </v-card-text>
+    </v-card>
+</v-menu>

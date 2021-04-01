@@ -1,0 +1,35 @@
+<section>
+    <v-btn class="text-none" elevation="0" block v-show="!opened" @click="open()">
+        <v-icon class="mr-2">mdi-plus</v-icon>
+        Add a card
+        <v-spacer></v-spacer>
+    </v-btn>
+
+    <v-form v-show="opened" @submit.prevent="addCard">
+        <v-card class="d-flex flex-column white">
+            <card-label-chips :card="card"></card-label-chips>
+            <v-textarea
+                @keydown="handleKeyDown"
+                elevation="0"
+                flat
+                autofocus
+                rows="2"
+                color="green"
+                solo
+                placeholder="Give a title to this card.."
+                hide-details="auto"
+                v-model="title"
+            ></v-textarea>
+        </v-card>
+        <div class="d-flex align-center mt-2">
+            <v-btn @click="addCard" color="green" dark elevation="0">
+                Add card
+            </v-btn>
+            <v-btn icon @click="close">
+                <v-icon>mdi-close</v-icon>
+            </v-btn>
+            <v-spacer></v-spacer>
+            <add-card-options :card="card"></add-card-options>
+        </div>
+    </v-form>
+</section>

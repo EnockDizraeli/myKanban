@@ -1,0 +1,54 @@
+<section>
+    <div v-if="starredBoards.length > 0">
+        <v-list-item>
+            <v-list-item-icon>
+                <v-icon>mdi-star-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title class="font-weight-bold">Starred Boards</v-list-item-title>
+        </v-list-item>
+        <div class="d-flex flex-wrap">
+            <board-card v-for="board in starredBoards" :board="board"></board-card>
+        </div>
+    </div>
+
+    <div>
+        <v-list-item>
+            <v-list-item-icon>
+                <v-icon>mdi-account-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title class="font-weight-bold">Personal Boards</v-list-item-title>
+        </v-list-item>
+        <div class="d-flex flex-wrap">
+            <board-card v-for="board in boards" :board="board"></board-card>
+            <div @click="$refs.createBoard.open()" class="board-card ml-4 grey lighten-4" v-ripple>
+                <div class="d-flex fill-height align-center justify-center">
+                    <b class="board-card_title black--text font-weight-light">Create new board</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <v-expansion-panels flat>
+        <v-expansion-panel>
+            <v-expansion-panel-header class="pa-0 pr-2 ma-0">
+                <v-list-item class="pa-0 pl-2 ma-0">
+                    <v-list-item-icon>
+                        <v-icon>mdi-window-closed</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title class="font-weight-bold">Closed Boards</v-list-item-title>
+                </v-list-item>
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+                <div class="d-flex align-start">
+                    <board-card v-for="board in closedBoards" :board="board"></board-card>
+                    <div class="d-flex flex-column align-center mx-auto">
+                        <v-icon large>mdi-window-closed</v-icon>
+                        <h4 class="text-center font-weight-light mx-auto">The boards you close will appear here.</h4>
+                    </div>
+                </div>
+            </v-expansion-panel-content>
+        </v-expansion-panel>
+    </v-expansion-panels>
+
+    <create-board ref="createBoard"></create-board>
+</section>

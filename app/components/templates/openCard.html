@@ -1,0 +1,27 @@
+<div class="open-card" style="position: absolute;">
+    <div @click="close()">
+        <v-overlay ref="overlay" :z-index="1"></v-overlay>
+    </div>
+
+    <div style="z-index: 5;position: relative;" class="d-flex align-start">
+        <open-card-edit 
+            @close="close()" 
+            :card="card"
+        ></open-card-edit>
+        
+        <div class="ml-2">
+            <edit-card-labels class="mt-1" :card="card"></edit-card-labels>
+            <v-btn class="btn-dark mt-1">
+                <v-icon left dense>mdi-account-outline</v-icon>
+                Change Members
+            </v-btn>
+            <move-card @move="close()" :card="card"></move-card>
+            <copy-card :card="card"></copy-card>
+            <edit-card-schedule :card="card"></edit-card-schedule>
+            <v-btn @click="archive().close()" class="btn-dark mt-1">
+                <v-icon left dense>mdi-archive</v-icon>
+                Archive
+            </v-btn>
+        </div>
+    </div>
+</div>

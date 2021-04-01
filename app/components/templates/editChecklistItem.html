@@ -1,0 +1,19 @@
+<v-form class="d-flex flex-column" @submit.prevent="editItem()">
+    <v-text-field
+        autofocus
+        dense
+        solo
+        hide-details="auto"
+        placeholder="Item title.."
+        v-model="title"
+    ></v-text-field>
+    <div class="pt-2">
+        <v-btn @click="editItem()" small color="green white--text text-none" elevation="0">
+            Save
+        </v-btn>
+        <v-btn small icon @click="close()">
+            <v-icon>mdi-close</v-icon>
+        </v-btn>
+        <v-spacer></v-spacer>
+    </div>
+</v-form>
