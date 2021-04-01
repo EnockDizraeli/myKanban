@@ -1,6 +1,8 @@
 
 <div align="center">
+  <hr/>
   <img width="120" height="120" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/favicon.png" alt="myKanban icon"/>
+  <hr/>
   <h2 align="center">
     <img alt="Free and open source kanban app" height="80" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/images/text.jpg">
   </h2>
