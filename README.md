@@ -62,3 +62,8 @@ Tap the link below for the demo
 * Starring boards
 * Archiving boards
 * Card descriptions
+
+## 💰 Contribute
+You can paypal to support the development of this project
+
+
