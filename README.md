@@ -15,6 +15,8 @@
 
 We all want to be productive and feel the satisfaction that comes with it, but doesn't it just suck when the existing kanban apps force you to create an account and to stay online.
 
+# What is myKanban?
+
 **Mykanban** helps by making it super-simple and covenient to use kanban on your PC as it works offline and only requires you to run the **index.html** file.
 
 MyKanban works in all major browsers and the data is saved in the offline storage.
