@@ -36,4 +36,5 @@ Tap the link below for the demo
 * Step 1: Download the zip file
 * Step 2 : Extract contents
 * Step 3: Run index.html file
-*I recommend you add a shortcut from the browser*
+
+*I also recommend you add a shortcut from the browser*
