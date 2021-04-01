@@ -12,6 +12,6 @@
 Lightweight kanban web application full made in Html, css and js.
 
 We all want to feel productive, but doesn't it just suck when the existing kanban apps force you to create an account and to stay online.
-Mykanban is helps you by supercharging your productivity while working completely offline.
+Mykanban helps by making it super-simple and covenient to use kanban on your pc as it works offline and only requires you to run the **index.html**.
 
 MyKanban works in all major browsers and the data is saved in the offline storage.
