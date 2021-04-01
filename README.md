@@ -13,7 +13,7 @@
 </div>
 
 
-We all want to feel productive, but doesn't it just suck when the existing kanban apps force you to create an account and to stay online.
+We all want to be productive and feel the satisfaction that comes with it, but doesn't it just suck when the existing kanban apps force you to create an account and to stay online.
 
 **Mykanban** helps by making it super-simple and covenient to use kanban on your pc as it works offline and only requires you to run the **index.html**.
 
