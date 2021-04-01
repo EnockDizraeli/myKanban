@@ -39,9 +39,27 @@ Tap the link below for the demo
 
 *I also recommend you add a shortcut from the browser*
 
-# Why use myKanban
+# Why use myKanban ?
+## Advantages
+>
 *   [x] Works offline
 *   [x] Easy install
 *   [x] Data stored in your own pc
 *   [x] Don't have to create an account 
 *   [x] Absolutely free 
+
+## Features
+>
+* Creating and customizing board backgrounds
+* Intuitive Card Drag and Drop Editing
+* Add checklists to card
+* Scheduling cards
+* Add labels to cards
+* Search using labels
+* Closing boards
+* Starring boards
+* Archiving boards
+
+
+
+*
