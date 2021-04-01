@@ -65,5 +65,7 @@ Tap the link below for the demo
 
 ## 💰 Contribute
 You can paypal to support the development of this project
+
 https://www.paypal.com/donate?hosted_button_id=6CM5L6KNL5A3Q
 
+https://patreon.com/https://www.patreon.com/enockDizraeli
