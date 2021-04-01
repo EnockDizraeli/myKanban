@@ -1,6 +1,6 @@
 
 <div align="center">
-  <h3 align="center">
+  <h2 align="center">
     <img width="120" height="120" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/favicon.png" alt="myKanban icon"/>
   </h2>
   <h2 align="center">
