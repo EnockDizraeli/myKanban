@@ -25,7 +25,7 @@ MyKanban works in all major browsers and the data is saved in the offline storag
   <img alt="MyKanban Screenshots" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/images/panel.jpg">
 </h2>
 
-# Demo
+# 😃 Demo
 Tap the link below for the demo
 
 <a href="https://enockdizraeli.github.io/myKanban" target="_blank">https://enockdizraeli.github.io/myKanban</a>
@@ -33,7 +33,7 @@ Tap the link below for the demo
   <img alt="MyKanban Screenshots" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/images/screenshot_2.JPG">
 </h2>
 
-# How to install
+# 📃 How to install
 
 * Step 1: Download the zip file
 * Step 2 : Extract contents
@@ -41,8 +41,8 @@ Tap the link below for the demo
 
 *I also recommend you add a shortcut from the browser*
 
-# Why use myKanban ?
-## Advantages
+# ❔ Why use myKanban ?
+## 😌 Advantages
 >
 *   [x] Works offline
 *   [x] Easy install
@@ -50,7 +50,7 @@ Tap the link below for the demo
 *   [x] Don't have to create an account 
 *   [x] Absolutely free 
 
-## Features
+## 💻 Features
 >
 * Creating and customizing board backgrounds
 * Intuitive Card Drag and Drop Editing
