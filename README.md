@@ -59,7 +59,4 @@ Tap the link below for the demo
 * Closing boards
 * Starring boards
 * Archiving boards
-
-
-
-*
+* Card descriptions
