@@ -27,3 +27,6 @@ MyKanban works in all major browsers and the data is saved in the offline storag
 Tap the link below for the demo
 
 <a href="https://enockdizraeli.github.io/myKanban" target="_blank">https://enockdizraeli.github.io/myKanban</a>
+<h2 align="center">
+  <img alt="MyKanban Screenshots" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/images/screenshot_2.JPG">
+</h2>
