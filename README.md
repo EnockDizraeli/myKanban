@@ -30,3 +30,10 @@ Tap the link below for the demo
 <h2 align="center">
   <img alt="MyKanban Screenshots" src="https://raw.githubusercontent.com/EnockDizraeli/myKanban/master/images/screenshot_2.JPG">
 </h2>
+
+# How to install
+
+* Step 1: Download the zip file
+* Step 2 : Extract contents
+* Step 3: Run index.html file
+*I recommend you add a shortcut from the browser*
