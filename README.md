@@ -9,7 +9,7 @@
  [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/supunlakmal/thismypc/graphs/commit-activity)
 </div>
 
-Lightweight kanban web application full made in Html, css and js.
+Lightweight kanban web application full made in HTML, CSS and JS.
 
 We all want to feel productive, but doesn't it just suck when the existing kanban apps force you to create an account and to stay online.
 Mykanban helps by making it super-simple and covenient to use kanban on your pc as it works offline and only requires you to run the **index.html**.
