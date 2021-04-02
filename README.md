@@ -66,7 +66,6 @@ Tap the link below for the demo
 ## 😙 Join the conversation
 * <a href="https://web.facebook.com/MyKanban-108996564624245" target="_blank">Facebook</a>
 * <a href="https://twitter.com/EDizraeli" target="_blank">Twitter</a>
-*
 
 ## 💰 Contribute
 You can paypal to support the development of this project
